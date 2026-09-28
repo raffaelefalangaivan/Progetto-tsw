@@ -3,14 +3,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Gaming Hub</title>
+<meta charset="UTF-8">
+<title>Gaming Hub</title>
 </head>
 <body>
 
 <h1>Gaming Hub</h1>
 
-<p>Work in progress</p>
+<a href="${pageContext.request.contextPath}/register">
+    Registrati
+</a>
 
 </body>
 </html>
