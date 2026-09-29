@@ -23,7 +23,7 @@ public class UserDAO {
         String sql =
                 "INSERT INTO users(username,email,password,role) " +
                 "VALUES(?,?,?,?)";
-
+        
         try (
                 Connection connection = dataSource.getConnection();
                 PreparedStatement statement =

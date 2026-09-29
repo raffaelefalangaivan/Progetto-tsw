@@ -64,7 +64,7 @@ public class RegisterServlet extends HttpServlet {
             }
 
             if (userDAO.emailExists(email)) {
-
+            	
                 request.setAttribute(
                         "error",
                         "Email già registrata");
