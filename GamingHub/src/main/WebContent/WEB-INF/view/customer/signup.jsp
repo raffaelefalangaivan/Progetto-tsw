@@ -30,6 +30,18 @@
     </button>
 
 </form>
+<%
+String error =
+        (String) request.getAttribute("error");
+%>
+
+<% if(error != null) { %>
+
+<p>
+    <%= error %>
+</p>
+
+<% } %>
 
 </body>
 </html>

@@ -1,6 +1,7 @@
 package dao;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
@@ -35,6 +36,50 @@ public class UserDAO {
             statement.setString(4, user.getRole());
 
             statement.executeUpdate();
+        }
+    }
+    public boolean emailExists(String email)
+            throws SQLException {
+
+        String sql =
+                "SELECT id FROM users WHERE email = ?";
+
+        try (
+                Connection connection =
+                        dataSource.getConnection();
+
+                PreparedStatement statement =
+                        connection.prepareStatement(sql)
+        ) {
+
+            statement.setString(1, email);
+
+            ResultSet resultSet =
+                    statement.executeQuery();
+
+            return resultSet.next();
+        }
+    }
+    public boolean usernameExists(String username)
+            throws SQLException {
+
+        String sql =
+                "SELECT id FROM users WHERE username = ?";
+
+        try (
+                Connection connection =
+                        dataSource.getConnection();
+
+                PreparedStatement statement =
+                        connection.prepareStatement(sql)
+        ) {
+
+            statement.setString(1, username);
+
+            ResultSet resultSet =
+                    statement.executeQuery();
+
+            return resultSet.next();
         }
     }
 }
